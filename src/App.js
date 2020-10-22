@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from "react";
+import Personne from "./components/Personne/Personne"
+import Horloge from "./containers/Horloge/Horloge"
+import "./App.css"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+    render() {
+        return (
+            <>
+                <Horloge />
+                <Personne nom="Lamine" age = "40" sexe ="Homme" />
+                <Personne nom= "aya" age = "7" sexe ="Femme"/>
+                <Personne nom="julie" age = "30" sexe ="Femme"/>
+            </>
+
+        );
+    }
+
 }
 
 export default App;
