@@ -5,13 +5,24 @@ import "./App.css"
 
 
 class App extends Component {
+
+    state = {
+        personnes :[
+            {nom: "Lamine", age: 39, sexe: true},
+            {nom: "Julie", age: 33, sexe: false},
+            {nom: "Aya", age: 8, sexe: false},
+
+        ]
+    }
+
+
     render() {
         return (
             <>
                 <Horloge />
-                <Personne nom="Lamine" age = "40" sexe ="Homme" />
-                <Personne nom= "aya" age = "7" sexe ="Femme"/>
-                <Personne nom="julie" age = "30" sexe ="Femme"/>
+                <Personne {...this.state.personnes[0]} />
+                <Personne {...this.state.personnes[1]} />
+                <Personne nom= {this.state.personnes[2].nom} age = {this.state.personnes[2].age } sexe ={this.state.personnes[2].sexe}/>
             </>
 
         );
